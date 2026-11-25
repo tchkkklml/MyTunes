@@ -2,9 +2,15 @@ package GUI;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Objects;
 
 
@@ -70,8 +76,18 @@ public class MainController {
         System. out. println("BtnTransfer");
     }
 
-    public void onClickBtnAllSongsNew(ActionEvent actionEvent) {
-        System. out. println("BtnAllSongsNew");
+    public void onClickBtnAllSongsNew(ActionEvent actionEvent) throws IOException {
+
+
+        System.out.println(getClass().getResource("/EditSong.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/EditSong.fxml"));
+        Parent root = loader.load();
+
+        Stage stage = new Stage();
+        stage.setTitle("New Song");
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
     }
 
     public void onClickBtnAllSongsEdit(ActionEvent actionEvent) {
