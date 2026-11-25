@@ -40,6 +40,5 @@ public class DBConnector {
             System.out.println("Connected to " + con.getCatalog());
         }
 
-// ere
     }
 }
