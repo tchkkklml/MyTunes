@@ -1,4 +1,4 @@
-package GUI;
+package GUI.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,8 +23,8 @@ public class MainController {
     }
 
     public void onClickBtnPlay(ActionEvent actionEvent) {
-        System. out. println("BtnPlay");
-        if(Objects.equals(btnPlay.getText(), "▶"))
+        System.out.println("BtnPlay");
+        if (Objects.equals(btnPlay.getText(), "▶"))
             btnPlay.setText("⏸");
         else btnPlay.setText("▶");
 
@@ -63,6 +63,11 @@ public class MainController {
 
     public void onClickBtnPlaylistsEdit(ActionEvent actionEvent) throws IOException {
         openWindow("/EditPlaylist.fxml","Edit Song");
+        openWindow("/PlaylistNameView.fxml","New Playlist");
+    }
+
+    public void onClickBtnPlaylistsEdit(ActionEvent actionEvent) throws IOException {
+        openWindow("/PlaylistNameView.fxml","Edit Song");
     }
 
     public void onClickBtnPlaylistsDelete(ActionEvent actionEvent) {
@@ -86,16 +91,15 @@ public class MainController {
     }
 
     public void onClickBtnAllSongsNew(ActionEvent actionEvent) throws IOException {
-
-        openWindow("/EditSong.fxml","New Song");
+        openWindow("/EditSongView.fxml","New Song");
     }
 
     public void onClickBtnAllSongsEdit(ActionEvent actionEvent) throws IOException {
-        openWindow("/EditSong.fxml","Edit Song");
+        openWindow("/EditSongView.fxml","Edit Song");
 
     }
-
     public void onClickBtnAllSongsDelete(ActionEvent actionEvent) {
         System. out. println("BtnAllSongsDelete");
     }
+
 }

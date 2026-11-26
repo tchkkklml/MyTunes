@@ -15,47 +15,51 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="950.0" prefHeight="600.0" prefWidth="950.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="950.0" prefHeight="600.0" prefWidth="950.0" style="-fx-background-color: #656360;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.MainController">
    <top>
-      <HBox alignment="CENTER" prefHeight="110.0" prefWidth="950.0" spacing="15.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="110.0" prefWidth="950.0" spacing="15.0" style="-fx-background-color: #BFBAB4;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#onClickBtnPrevious" prefHeight="25.0" prefWidth="35.0" style="-fx-background-radius: 7;" text="⏮" HBox.hgrow="ALWAYS">
+            <Button mnemonicParsing="false" onAction="#onClickBtnPrevious" prefHeight="30.0" prefWidth="40.0" style="-fx-background-radius: 7; -fx-background-color: #EFE9E1; -fx-border-color: grey; -fx-border-radius: 7;" text="⏮" HBox.hgrow="ALWAYS">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Inter 18pt Regular" size="13.0" />
                </font>
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
-            <Button fx:id="btnPlay" mnemonicParsing="false" onAction="#onClickBtnPlay" prefHeight="30.0" prefWidth="45.0" style="-fx-background-radius: 7;" text="▶" HBox.hgrow="ALWAYS">
+            <Button fx:id="btnPlay" mnemonicParsing="false" onAction="#onClickBtnPlay" prefHeight="40.0" prefWidth="50.0" style="-fx-background-radius: 7; -fx-background-color: #EFE9E1; -fx-border-color: grey; -fx-border-radius: 7;" text="▶" HBox.hgrow="ALWAYS">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Inter 18pt Regular" size="13.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onClickBtnNext" prefHeight="25.0" prefWidth="35.0" style="-fx-background-radius: 7;" text="⏭" HBox.hgrow="ALWAYS">
+            <Button mnemonicParsing="false" onAction="#onClickBtnNext" prefHeight="30.0" prefWidth="40.0" style="-fx-background-radius: 7; -fx-background-color: #EFE9E1; -fx-border-color: grey; -fx-border-radius: 7;" text="⏭" HBox.hgrow="ALWAYS">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Inter 18pt Regular" size="13.0" />
                </font>
             </Button>
             <Separator orientation="VERTICAL" prefHeight="80.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-            <VBox prefHeight="80.0" prefWidth="137.0" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="80.0" prefWidth="146.0">
                <children>
                   <Label fx:id="lblCurrentSongTitle" prefHeight="34.0" prefWidth="175.0" text="No song selected" VBox.vgrow="ALWAYS">
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font name="Inter 18pt SemiBold" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblCurrentSongArtist" prefHeight="34.0" prefWidth="154.0" text="Artist" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="lblCurrentSongArtist" prefHeight="34.0" prefWidth="154.0" text="Artist" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Inter 18pt Regular" size="13.0" />
+                     </font></Label>
                </children>
             </VBox>
-            <Label fx:id="lblTimePast" text="0:00" HBox.hgrow="ALWAYS" />
+            <Label fx:id="lblTimePast" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="48.0" text="0:00" HBox.hgrow="ALWAYS" />
             <Slider fx:id="sldrSong" blockIncrement="5.0" onMouseReleased="#onSldrSong" prefHeight="16.0" prefWidth="150.0" HBox.hgrow="ALWAYS" />
-            <Label fx:id="lblTimeFull" text="0:00" HBox.hgrow="ALWAYS" />
-            <Separator orientation="VERTICAL" prefHeight="80.0" prefWidth="24.0" HBox.hgrow="ALWAYS" />
-            <Slider fx:id="sldrVolume" blockIncrement="5.0" minorTickCount="1" onMouseReleased="#onSldrVolume" orientation="VERTICAL" value="70.0" HBox.hgrow="ALWAYS" />
+            <Label fx:id="lblTimeFull" prefHeight="17.0" prefWidth="49.0" text="0:00" HBox.hgrow="ALWAYS" />
             <Separator orientation="VERTICAL" prefHeight="80.0" prefWidth="31.0" />
-            <TextField fx:id="txtFilter" promptText="Filter by title or artist..." />
-            <Button mnemonicParsing="false" onAction="#onClickBtnFilter" text="Filter" />
+            <TextField fx:id="txtFilter" promptText="Filter by title or artist..." style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" />
+            <Button mnemonicParsing="false" onAction="#onClickBtnFilter" style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: Grey; -fx-border-radius: 7;" text="Filter">
+               <font>
+                  <Font name="Inter 18pt Regular" size="13.0" />
+               </font></Button>
          </children>
          <padding>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -69,16 +73,16 @@
       </HBox>
    </top>
    <center>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <padding>
             <Insets bottom="3.0" left="10.0" right="10.0" />
          </padding>
          <children>
-            <VBox prefHeight="490.0" prefWidth="270.0" style="-fx-background-color: lightgrey; -fx-background-radius: 7;" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="490.0" prefWidth="270.0" style="-fx-background-color: #BFBAB4; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" HBox.hgrow="ALWAYS">
                <children>
                   <Label text="PLAYLISTS" VBox.vgrow="ALWAYS">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Inter 18pt Regular" size="18.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="5.0" left="10.0" top="5.0" />
@@ -87,11 +91,11 @@
                         <Insets left="5.0" top="5.0" />
                      </padding>
                   </Label>
-                  <TableView fx:id="allPaylists" cache="true" style="-fx-background-color: lightgrey;" VBox.vgrow="ALWAYS">
+                  <TableView fx:id="allPaylists" cache="true" style="-fx-background-color: #EFE9E1;" VBox.vgrow="ALWAYS">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Name" />
-                      <TableColumn prefWidth="108.76858520507812" text="Somgs" />
-                        <TableColumn prefWidth="59.23143005371094" text="Time" />
+                      <TableColumn prefWidth="75.0" style="-fx-background-color: #BFBAB4;" text="Name" />
+                      <TableColumn prefWidth="108.76858520507812" style="-fx-background-color: #BFBAB4;" text="Songs" />
+                        <TableColumn prefWidth="59.23143005371094" style="-fx-background-color: #BFBAB4;" text="Time" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -100,9 +104,18 @@
                   <Separator prefWidth="200.0" VBox.vgrow="ALWAYS" />
                   <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" spacing="5.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onClickBtnPlaylistsNew" text="New..." HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" onAction="#onClickBtnPlaylistsEdit" text="Edit..." HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" onAction="#onClickBtnPlaylistsDelete" text="Delete" textFill="RED" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#onClickBtnPlaylistsNew" style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" text="New..." HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Inter 18pt Regular" size="13.0" />
+                           </font></Button>
+                        <Button mnemonicParsing="false" onAction="#onClickBtnPlaylistsEdit" style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" text="Edit..." HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Inter 18pt Regular" size="13.0" />
+                           </font></Button>
+                        <Button mnemonicParsing="false" onAction="#onClickBtnPlaylistsDelete" style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" text="Delete" textFill="RED" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Inter 18pt Regular" size="13.0" />
+                           </font></Button>
                      </children>
                      <padding>
                         <Insets left="10.0" />
@@ -110,11 +123,11 @@
                   </HBox>
                </children>
             </VBox>
-            <VBox prefHeight="475.0" prefWidth="273.0" style="-fx-background-color: lightgrey; -fx-background-radius: 7;" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="475.0" prefWidth="273.0" style="-fx-background-color: #BFBAB4; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" HBox.hgrow="ALWAYS">
                <children>
                   <Label text="PLAYLIST IS NOT SELECTED" VBox.vgrow="ALWAYS">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Inter 18pt Regular" size="18.0" />
                      </font>
                      <padding>
                         <Insets left="5.0" top="5.0" />
@@ -123,21 +136,30 @@
                         <Insets bottom="5.0" left="10.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <ListView fx:id="selectedPlaylist" style="-fx-background-color: lightgrey;" VBox.vgrow="ALWAYS" />
+                  <ListView fx:id="selectedPlaylist" prefHeight="394.0" prefWidth="251.0" style="-fx-background-color: #EFE9E1;" VBox.vgrow="ALWAYS" />
                   <Separator prefWidth="200.0" VBox.vgrow="ALWAYS" />
                   <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" spacing="5.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onClickBtnUp" text="↑" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" onAction="#onClickBtnDown" text="↓" HBox.hgrow="ALWAYS">
+                        <Button mnemonicParsing="false" onAction="#onClickBtnUp" style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" text="↑" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Inter 18pt Regular" size="13.0" />
+                           </font></Button>
+                        <Button mnemonicParsing="false" onAction="#onClickBtnDown" style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" text="↓" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
+                           <font>
+                              <Font name="Inter 18pt Regular" size="13.0" />
+                           </font>
                         </Button>
                         <Region prefHeight="35.0" prefWidth="81.0" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" onAction="#onClickBtnSelectedPDelete" text="Delete" textFill="RED" HBox.hgrow="ALWAYS">
+                        <Button mnemonicParsing="false" onAction="#onClickBtnSelectedPDelete" style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" text="Delete" textFill="RED" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="10.0" right="5.0" />
                            </HBox.margin>
+                           <font>
+                              <Font name="Inter 18pt Regular" size="13.0" />
+                           </font>
                         </Button>
                      </children>
                      <padding>
@@ -146,14 +168,17 @@
                   </HBox>
                </children>
             </VBox>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onClickBtnTransfer" prefHeight="30.0" prefWidth="50.0" style="-fx-background-radius: 7;" text="←" />
-            <VBox prefHeight="472.0" prefWidth="375.0" style="-fx-background-color: lightgrey; -fx-background-radius: 7;" HBox.hgrow="ALWAYS">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onClickBtnTransfer" prefHeight="30.0" prefWidth="50.0" style="-fx-background-radius: 7; -fx-background-color: #EFE9E1; -fx-border-color: grey; -fx-border-radius: 7;" text="←">
+               <font>
+                  <Font name="Inter 18pt Regular" size="13.0" />
+               </font></Button>
+            <VBox prefHeight="472.0" prefWidth="375.0" style="-fx-background-color: #BFBAB4; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" HBox.hgrow="ALWAYS">
                <children>
                   <HBox alignment="CENTER_LEFT" maxHeight="0.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label prefHeight="28.0" prefWidth="203.0" text="ALL SONGS" HBox.hgrow="ALWAYS">
                            <font>
-                              <Font size="18.0" />
+                              <Font name="Inter 18pt Regular" size="18.0" />
                            </font>
                            <padding>
                               <Insets left="5.0" top="5.0" />
@@ -179,12 +204,12 @@
                         </Label>
                      </children>
                   </HBox>
-                  <TableView fx:id="AllSongsList" cache="true" style="-fx-background-color: lightgrey;" VBox.vgrow="ALWAYS">
+                  <TableView fx:id="AllSongsList" prefHeight="394.0" prefWidth="345.0" style="-fx-background-color: #EFE9E1;" VBox.vgrow="ALWAYS">
                      <columns>
-                        <TableColumn prefWidth="75.0" text="Title" />
-                        <TableColumn prefWidth="108.76858520507812" text="Artist" />
-                        <TableColumn prefWidth="59.23143005371094" text="Category" />
-                        <TableColumn prefWidth="59.23143005371094" text="Time" />
+                        <TableColumn prefWidth="75.0" style="-fx-background-color: #BFBAB4;" text="Title" />
+                        <TableColumn prefWidth="108.76858520507812" style="-fx-background-color: #BFBAB4;" text="Artist" />
+                        <TableColumn prefWidth="59.23143005371094" style="-fx-background-color: #BFBAB4;" text="Category" />
+                        <TableColumn prefWidth="59.23143005371094" style="-fx-background-color: #BFBAB4;" text="Time" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -193,9 +218,18 @@
                   <Separator prefHeight="0.0" prefWidth="404.0" VBox.vgrow="ALWAYS" />
                   <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" prefWidth="404.0" spacing="5.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onClickBtnAllSongsNew" text="New..." HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" onAction="#onClickBtnAllSongsEdit" text="Edit..." HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" onAction="#onClickBtnAllSongsDelete" text="Delete" textFill="RED" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#onClickBtnAllSongsNew" style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" text="New..." HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Inter 18pt Regular" size="13.0" />
+                           </font></Button>
+                        <Button mnemonicParsing="false" onAction="#onClickBtnAllSongsEdit" style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" text="Edit..." HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Inter 18pt Regular" size="13.0" />
+                           </font></Button>
+                        <Button mnemonicParsing="false" onAction="#onClickBtnAllSongsDelete" style="-fx-background-color: #EFE9E1; -fx-background-radius: 7; -fx-border-color: grey; -fx-border-radius: 7;" text="Delete" textFill="RED" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Inter 18pt Regular" size="13.0" />
+                           </font></Button>
                      </children>
                      <VBox.margin>
                         <Insets />
