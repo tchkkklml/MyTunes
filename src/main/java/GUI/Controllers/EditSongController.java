@@ -1,8 +1,10 @@
 package GUI.Controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 
 public class EditSongController {
 
@@ -11,12 +13,15 @@ public class EditSongController {
     public TextField txtArtist;
     public ComboBox listCategory;
 
-    public void onBtnChoose(ActionEvent actionEvent) {
+    @FXML
+    private void onBtnChoose(ActionEvent actionEvent) {
     }
 
-    public void onBtnCancel(ActionEvent actionEvent) {
+    @FXML
+    private void onBtnCancel(ActionEvent actionEvent) {
     }
 
-    public void onBtnSave(ActionEvent actionEvent) {
+    @FXML
+    private void onBtnSave(ActionEvent actionEvent) {
     }
 }
