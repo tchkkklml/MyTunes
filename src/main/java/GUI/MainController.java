@@ -28,9 +28,18 @@ public class MainController {
             btnPlay.setText("⏸");
         else btnPlay.setText("▶");
 
-
-
     }
+   private void openWindow(String fxmlFile, String title) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root));
+       stage.initModality(Modality.APPLICATION_MODAL);
+       stage.showAndWait();
+   }
+
+
 
     public void onClickBtnNext(ActionEvent actionEvent) {
         System. out. println("BtnNext");
@@ -48,12 +57,12 @@ public class MainController {
         System. out. println("BtnFilter");
     }
 
-    public void onClickBtnPlaylistsNew(ActionEvent actionEvent) {
-        System. out. println("BtnPlaylistsNew");
+    public void onClickBtnPlaylistsNew(ActionEvent actionEvent) throws IOException {
+        openWindow("/EditPlaylist.fxml","New Playlist");
     }
 
-    public void onClickBtnPlaylistsEdit(ActionEvent actionEvent) {
-        System. out. println("BtnPlaylistsEdit");
+    public void onClickBtnPlaylistsEdit(ActionEvent actionEvent) throws IOException {
+        openWindow("/EditPlaylist.fxml","Edit Song");
     }
 
     public void onClickBtnPlaylistsDelete(ActionEvent actionEvent) {
@@ -78,20 +87,12 @@ public class MainController {
 
     public void onClickBtnAllSongsNew(ActionEvent actionEvent) throws IOException {
 
-
-        System.out.println(getClass().getResource("/EditSong.fxml"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/EditSong.fxml"));
-        Parent root = loader.load();
-
-        Stage stage = new Stage();
-        stage.setTitle("New Song");
-        stage.setScene(new Scene(root));
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.showAndWait();
+        openWindow("/EditSong.fxml","New Song");
     }
 
-    public void onClickBtnAllSongsEdit(ActionEvent actionEvent) {
-        System. out. println("BtnAllSongsEdit");
+    public void onClickBtnAllSongsEdit(ActionEvent actionEvent) throws IOException {
+        openWindow("/EditSong.fxml","Edit Song");
+
     }
 
     public void onClickBtnAllSongsDelete(ActionEvent actionEvent) {
