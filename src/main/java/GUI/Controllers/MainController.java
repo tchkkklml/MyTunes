@@ -22,9 +22,8 @@ public class MainController {
             btnPlay.setText("⏸");
         else btnPlay.setText("▶");
 
-
-
     }
+
 
     public void onClickBtnNext(ActionEvent actionEvent) {
         System. out. println("BtnNext");
