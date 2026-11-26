@@ -28,18 +28,16 @@ public class MainController {
             btnPlay.setText("⏸");
         else btnPlay.setText("▶");
 
-
-
     }
-        private void openWindow(String fxmlFile, String title) throws IOException {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setTitle(title);
-            stage.setScene(new Scene(root));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
-        }
+   private void openWindow(String fxmlFile, String title) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root));
+       stage.initModality(Modality.APPLICATION_MODAL);
+       stage.showAndWait();
+   }
 
 
 
@@ -60,6 +58,11 @@ public class MainController {
     }
 
     public void onClickBtnPlaylistsNew(ActionEvent actionEvent) throws IOException {
+        openWindow("/EditPlaylist.fxml","New Playlist");
+    }
+
+    public void onClickBtnPlaylistsEdit(ActionEvent actionEvent) throws IOException {
+        openWindow("/EditPlaylist.fxml","Edit Song");
         openWindow("/PlaylistNameView.fxml","New Playlist");
     }
 
