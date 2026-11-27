@@ -16,7 +16,7 @@ public class DBConnector {
         String user = "";
         String password = "";
 
-        File config = new File("src/main/resources/config.settings");
+        File config = new File("config.settings");
 
         try (Scanner reader = new Scanner(config)) {
             serverName = reader.nextLine().split("=", 2)[1];
